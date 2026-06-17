@@ -1,0 +1,56 @@
+/* Basic CSS for the quiz app - responsive and beginner friendly */
+:root{
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --muted: #6b7280;
+  --accent: #eef2ff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+}
+.app-container{
+  max-width:700px;
+  margin:40px auto;
+  padding:16px;
+}
+header{ text-align:center; margin-bottom:20px }
+.subtitle{ color:var(--muted); margin-top:6px }
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(17,24,39,0.08);
+}
+.question-header{ display:flex; justify-content:space-between; align-items:center; gap:12px }
+.question-header h2{ margin:0; font-size:1.1rem }
+.progress{ color:var(--muted); font-size:0.9rem }
+.options{ list-style:none; padding:0; margin:16px 0 }
+.option{
+  display:flex; align-items:center; gap:12px;
+  padding:12px 14px; margin-bottom:10px;
+  background:linear-gradient(180deg, #fff, #fcfdff);
+  border-radius:8px; cursor:pointer; border:1px solid transparent;
+  transition:all 0.15s ease-in-out;
+}
+.option:hover{ transform:translateY(-2px); box-shadow:0 6px 12px rgba(16,24,40,0.04) }
+.option.selected{ background:var(--accent); border-color:var(--primary) }
+.option-label{ font-weight:600; width:24px }
+.controls{ display:flex; gap:10px; justify-content:flex-end; margin-top:8px }
+button{ padding:10px 14px; border-radius:8px; border:0; cursor:pointer }
+.primary{ background:var(--primary); color:#fff }
+.primary:disabled{ opacity:0.5; cursor:not-allowed }
+.muted{ background:#eef2f3; color:var(--muted) }
+.score{ font-size:1.2rem; margin:12px 0 }
+
+/* Responsive adjustments */
+@media (max-width:520px){
+  .app-container{ margin:20px; }
+  .controls{ flex-direction:column-reverse; align-items:stretch }
+  .controls button{ width:100% }
+}
